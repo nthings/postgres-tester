@@ -1,0 +1,25 @@
+{
+  "name": "postgres-tester",
+  "version": "0.0.1",
+  "description": "Small Node app to be deployed in Kubernetes to test connectivity to PostgreSQL",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nthings/postgres-tester.git"
+  },
+  "author": "nthings <n_othing@hotmail.com>",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/nthings/postgres-tester/issues"
+  },
+  "homepage": "https://github.com/nthings/postgres-tester#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "pg": "^8.7.3",
+    "pug": "^3.0.2"
+  }
+}
