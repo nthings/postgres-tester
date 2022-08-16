@@ -22,4 +22,4 @@ jobs:
       run: docker build . --file Dockerfile --tag nthingsm/postgres-tester:$(date +%s)
       
     - name: Docker Push
-      run: docker push nthingsm/postgres-tester
+      run: docker push nthingsm/postgres-tester:$(date +%s)
