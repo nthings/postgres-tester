@@ -37,6 +37,10 @@ router.get("/", async function (req, res) {
   }
 });
 
+router.get("/health", async function (req, res) {
+  res.status(200).send("ok")
+});
+
 //add the router
 app.use("/", router);
 const port = process.env.PORT || 3000
