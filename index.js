@@ -30,6 +30,7 @@ router.get("/", async function (req, res) {
     message = `Something went wrong. I can't connect. Error: ${JSON.stringify(e)}`;
   } finally {
     res.render("index", { message, query });
+    await client.end();
   }
 });
 
