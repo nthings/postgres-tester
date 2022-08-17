@@ -11,9 +11,10 @@ app.set("views", path.join(__dirname, "views"));
 router.get("/", async function (req, res) {
   let message = "";
   let query = "";
+  let client;
   try {
     // DB Connection
-    const client = new Client({
+    client = new Client({
       host: process.env["DB_HOST"],
       user: process.env["DB_USER"],
       password: process.env["DB_PASSWORD"],
@@ -30,7 +31,9 @@ router.get("/", async function (req, res) {
     message = `Something went wrong. I can't connect. Error: ${JSON.stringify(e)}`;
   } finally {
     res.render("index", { message, query });
-    await client.end();
+    if (client) {
+      await client.end();
+    } 
   }
 });
 
